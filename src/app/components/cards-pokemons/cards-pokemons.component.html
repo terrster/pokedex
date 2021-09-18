@@ -1,0 +1,32 @@
+<ion-card class = "card ion-no-padding" [style.background] = "getcolorpokemon()" >
+  <ion-card-header>
+    <ion-row class="ion-justify-content-between">
+      <ion-col>
+        <ion-card-title >{{pokemon.name}}</ion-card-title>
+      </ion-col>
+      <ion-col class="ion-align-self-end">
+        <ion-card-subtitle>#{{pokemon.id}}</ion-card-subtitle>
+      </ion-col>
+    </ion-row> 
+  </ion-card-header>
+
+  <ion-card-content>
+    
+      <ion-row class="ion-justify-content-between ion-align-items-stretch">
+        <ion-col class="inicio">          
+            <ion-col *ngFor="let type of pokemon.types">
+              <ion-chip>
+                <ion-label>{{type.type.name | uppercase}}</ion-label>
+              </ion-chip>
+            </ion-col>
+        </ion-col>
+        <ion-col class="imgbox">
+          <ion-thumbnail class="no-margin">
+            <img [src]="pokemon.sprites.front_default">
+          </ion-thumbnail>
+        </ion-col>
+      </ion-row>
+    
+  </ion-card-content>
+
+</ion-card>
